@@ -1,0 +1,30 @@
+{% extends "bootbase.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="icon" href="{{ url_for('static', path='favicon.ico') }}" type="image/x-icon">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+    {% if title %}
+        <title>
+            {{ title }}
+        </title>
+    {% else %}
+        <title>
+            ZarrDAP
+        </title>
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    <h3>
+        <a href="{{ url_for('root') }}">ZarrDAP Catalog</a>
+        at
+        <a href="https://www.ncei.noaa.gov">NCEI</a>
+        <br>
+        ZarrDAP Data Server [Version 0.9.1]
+    </h3>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

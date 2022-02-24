@@ -1,0 +1,8 @@
+{
+  "datasets": [
+    "mur-sst/",
+    "ncar-dart-cam6/weekly/",
+    "ncar-dart-cam6/hourly6/",
+    "noaa-goes16/ABI-L1b-RadC/2021/327/*/"
+  ]
+}

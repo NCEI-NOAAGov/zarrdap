@@ -1,0 +1,13 @@
+aiofiles
+cachetools
+cfgrib
+dask[complete]
+fastapi[all]
+gunicorn
+jinja2
+netCDF4
+numpy
+s3fs
+uvicorn
+xarray
+zarr

@@ -1,0 +1,84 @@
+iBODY {
+  font-family: Tahoma, Arial, sans-serif;
+  color: black;
+  background-color: white;
+}
+
+H1 {
+  font-family: Tahoma, Arial, sans-serif;
+  color: white;
+  background-color: #315F86;
+  font-size: 22px;
+  margin: 10px 10px 10px 10px;
+}
+
+H2 {
+  font-family: Tahoma, Arial, sans-serif;
+  color: white;
+  background-color: #315F86;
+  font-size: 16px;
+  margin: 10px 10px 10px 10px;
+}
+
+H3 {
+  font-family: Tahoma, Arial, sans-serif;
+  color: white;
+  background-color: #315F86;
+  font-size: 14px;
+  margin: 10px 10px 10px 10px;
+}
+
+B {
+  font-family: Tahoma, Arial, sans-serif;
+  color: white;
+  background-color: #315F86;
+}
+
+P {
+  font-family: Tahoma,Arial,sans-serif;
+  background: white;
+  color: black;
+  font-size: 14px;
+  margin: 10px 10px 10px 10px;
+}
+
+A {
+  color : black;
+}
+
+A.name {
+  color : black;
+}
+
+HR {
+  color : #525D76;
+}
+
+.navbar {
+    margin: 10px 10px 10px 10px;
+    z-index: 1;
+}
+
+.container {
+    width: 500px;
+    clear: both;
+}
+
+#bs-example-navbar-collapse-1 {
+    background-color: #315F86;
+}
+
+div.col-md-4 {
+    margin: 10px 10px 10px 10px;
+}
+
+html,
+body,
+header,
+.view {
+    height: 100%
+}
+
+.big {
+  font-size: 22px;
+}

@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Datasets</h1>
+    <table width="100%" cellspacing="0" cellpadding="5" align="center">
+    {% if not request.url.path.endswith('catalog/') %}
+        <tr>
+            <td align="left">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <img src="{{ url_for('static', path='folder.gif') }}" alt="folder" width="16">
+                &nbsp;
+                <a href="{{ url_for('path', path='/'.join(request.path.split('/')[3:-2])) }}"><span class="big">[{{ '/'.join(request.path.split('/')[2:-2]) + '/' }}]</span></a>
+            </td>
+            <td>
+                <span class="big">DAS</span>
+            </td>
+            <td>
+                <span class="big">DDS</span>
+            </td>
+            <td>
+                <span class="big">DAP URL</span>
+            </td>
+        </tr>
+    {% else %}
+    {% endif %}
+    {% for c in categories %}
+        {% if loop.index % 2 != 0 %}
+            {% if c.endswith(('.zarr', '.nc', '.nc.gz', '.grb', '.grib', '.grb2', '.grib2')) %}
+                <tr bgcolor="#eeeeee">
+                    <td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{{ url_for('path', path='/'.join((request.path_params['path'], c))) }}"><span class="big">{{ c }}</span></a>
+                    </td>
+                    <td>
+                        <a href="{{ url_for('opendap_das', path='/'.join((request.path_params['path'], c))) }}"><span class="big">DAS</span></a>
+                    </td>
+                    <td>
+                        <a href="{{ url_for('opendap_dds', path='/'.join((request.path_params['path'], c))) }}"><span class="big">DDS</span></a>
+                    </td>
+                    <td>
+                        <span class="big">{{ url_for('opendap_dods', path='/'.join((request.path_params['path'], c)))[:-5] }}</span>
+                    </td>
+                </tr>
+            {% else %}
+                <tr bgcolor="#eeeeee">
+                    <td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="{{ url_for('static', path='folder.gif') }}" alt="folder" width="16">
+                        &nbsp;
+                        <a href="{{ url_for('path', path='/'.join((request.path_params['path'], c))) }}"><span class="big">{{ c }}</span></a>
+                </tr>
+            {% endif %}
+        {% else %}
+            {% if c.endswith(('.zarr', '.nc', '.nc.gz', '.grb', '.grib', '.grb2', '.grib2')) %}
+                <tr>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="{{ url_for('path', path='/'.join((request.path_params['path'], c))) }}"><span class="big">{{ c }}</span></a>
+                    </td>
+                    <td>
+                        <a href="{{ url_for('opendap_das', path='/'.join((request.path_params['path'], c))) }}"><span class="big">DAS</span></a>
+                    </td>
+                    <td>
+                        <a href="{{ url_for('opendap_dds', path='/'.join((request.path_params['path'], c))) }}"><span class="big">DDS</span></a>
+                    </td>
+                    <td>
+                        <span class="big">{{ url_for('opendap_dods', path='/'.join((request.path_params['path'], c)))[:-5] }}</span>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="{{ url_for('static', path='folder.gif') }}" alt="folder" width="16">
+                        &nbsp;
+                        <a href="{{ url_for('path', path='/'.join((request.path_params['path'], c))) }}"><span class="big">{{ c }}</span></a>
+                </tr>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+    </table>
+    {{ super() }}
+{% endblock %}
