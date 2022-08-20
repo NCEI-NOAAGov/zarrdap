@@ -52,11 +52,11 @@ An **Intake** catalog is automatically generated from the ZarrDAP catalog.
 
 ## Maintainers
 Mark Capece
-* mark.capece@noaa.gov
+* mark@markcapece.net
 * [@markccapece](https://github.com/markccapece)
 
 ## Contributing
-All contributors are welcome. Just [open an issue]() or [submit a pull request]()!
+All contributors are welcome. Just [open an issue](https://github.com/NCEI-NOAAGov/zarrdap/issues) or [submit a pull request](https://github.com/NCEI-NOAAGov/zarrdap/pulls)!
 
 ## License
 Software code created by U.S. Government employees is not subject to copyright in the United States (17 U.S.C. §105).
